@@ -1,0 +1,22 @@
+type Coin {
+    name: String!
+    price: Int!
+    time: String!
+}
+
+input CoinInput {
+    name: String!
+}
+
+type Query {
+    coins: [Coin]
+    coin(name: String): Coin
+}
+
+type Mutation {
+    createCoin(input: CoinInput) : Coin
+}
+
+type Subscription {
+    liveCoinsPrice: [Coin]
+}
